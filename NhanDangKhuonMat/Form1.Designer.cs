@@ -30,207 +30,148 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.imageBox1 = new Emgu.CV.UI.ImageBox();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.horizonticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageBox2 = new Emgu.CV.UI.ImageBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // listView1
+            // menuStrip2
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(663, 30);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(180, 373);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.menuStrip2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.menuStrip2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(960, 25);
+            this.menuStrip2.TabIndex = 0;
+            this.menuStrip2.Text = "menuStrip2";
             // 
-            // columnHeader1
+            // toolStripMenuItem1
             // 
-            this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 0;
+            this.toolStripMenuItem1.Image = global::NhanDangKhuonMat.Properties.Resources.play_button;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 21);
+            this.toolStripMenuItem1.Text = "Start";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // columnHeader2
+            // toolStripMenuItem2
             // 
-            this.columnHeader2.Text = "Height";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 90;
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem4,
+            this.horizonticalToolStripMenuItem});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(40, 21);
+            this.toolStripMenuItem2.Text = "Flip";
             // 
-            // columnHeader3
+            // toolStripMenuItem4
             // 
-            this.columnHeader3.Text = "Width";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 90;
+            this.toolStripMenuItem4.Image = global::NhanDangKhuonMat.Properties.Resources.flipvertical_button;
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem4.Text = "Vertical";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
-            // listView2
+            // horizonticalToolStripMenuItem
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView2.GridLines = true;
-            this.listView2.Location = new System.Drawing.Point(855, 30);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(180, 373);
-            this.listView2.TabIndex = 7;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged_1);
+            this.horizonticalToolStripMenuItem.Image = global::NhanDangKhuonMat.Properties.Resources.fliphorizontal_button;
+            this.horizonticalToolStripMenuItem.Name = "horizonticalToolStripMenuItem";
+            this.horizonticalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.horizonticalToolStripMenuItem.Text = "Horizontical";
+            this.horizonticalToolStripMenuItem.Click += new System.EventHandler(this.horizonticalToolStripMenuItem_Click);
             // 
-            // columnHeader4
+            // toolStripMenuItem3
             // 
-            this.columnHeader4.Text = "ID";
-            this.columnHeader4.Width = 0;
+            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem6,
+            this.deleteToolStripMenuItem});
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(49, 21);
+            this.toolStripMenuItem3.Text = "Tools";
             // 
-            // columnHeader5
+            // toolStripMenuItem6
             // 
-            this.columnHeader5.Text = "Height";
-            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader5.Width = 90;
+            this.toolStripMenuItem6.Image = global::NhanDangKhuonMat.Properties.Resources.loadlistbutton;
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem6.Text = "Load";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
-            // columnHeader6
+            // deleteToolStripMenuItem
             // 
-            this.columnHeader6.Text = "Width";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 90;
+            this.deleteToolStripMenuItem.Image = global::NhanDangKhuonMat.Properties.Resources.delete_button;
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
-            // button4
+            // imageBox2
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Image = global::NhanDangKhuonMat.Properties.Resources.delete_button;
-            this.button4.Location = new System.Drawing.Point(320, 424);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(56, 56);
-            this.button4.TabIndex = 9;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.imageBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imageBox2.Location = new System.Drawing.Point(13, 32);
+            this.imageBox2.Name = "imageBox2";
+            this.imageBox2.Size = new System.Drawing.Size(640, 373);
+            this.imageBox2.TabIndex = 2;
+            this.imageBox2.TabStop = false;
             // 
-            // button3
+            // dateTimePicker1
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Image = global::NhanDangKhuonMat.Properties.Resources.loadlistbutton;
-            this.button3.Location = new System.Drawing.Point(256, 424);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(56, 56);
-            this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Image = global::NhanDangKhuonMat.Properties.Resources.flipvertical_button;
-            this.button2.Location = new System.Drawing.Point(125, 424);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(56, 56);
-            this.button2.TabIndex = 5;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::NhanDangKhuonMat.Properties.Resources.fliphorizontal_button;
-            this.button1.Location = new System.Drawing.Point(191, 424);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 56);
-            this.button1.TabIndex = 4;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnStart
-            // 
-            this.btnStart.BackColor = System.Drawing.Color.White;
-            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStart.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnStart.Image = global::NhanDangKhuonMat.Properties.Resources.play_button;
-            this.btnStart.Location = new System.Drawing.Point(56, 424);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(56, 56);
-            this.btnStart.TabIndex = 3;
-            this.btnStart.Text = "\r\n";
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click_1);
-            // 
-            // imageBox1
-            // 
-            this.imageBox1.BackColor = System.Drawing.Color.White;
-            this.imageBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imageBox1.Location = new System.Drawing.Point(29, 18);
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.Size = new System.Drawing.Size(613, 396);
-            this.imageBox1.TabIndex = 2;
-            this.imageBox1.TabStop = false;
-            this.imageBox1.WaitOnLoad = true;
+            this.dateTimePicker1.Location = new System.Drawing.Point(758, 410);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(202, 21);
+            this.dateTimePicker1.TabIndex = 3;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1039, 492);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.imageBox1);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ClientSize = new System.Drawing.Size(960, 430);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.imageBox2);
+            this.Controls.Add(this.menuStrip2);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip2;
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
+            this.Text = "Nhận dạng khuôn mặt";
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Emgu.CV.UI.ImageBox imageBox1;
-        private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem flipToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verticalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem horizoncalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem typeToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem horizonticalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private Emgu.CV.UI.ImageBox imageBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

@@ -45,7 +45,7 @@ namespace NhanDangKhuonMat
             //***Tải dữ liệu từ bảng face của file XML vào ListView***//
             try
             {
-                listView1.Items.Clear();
+                //listView1.Items.Clear();
                 DataSet datafaceSet = new DataSet();
                 datafaceSet.ReadXml(path);
                 DataTable dt = new DataTable();
@@ -53,9 +53,9 @@ namespace NhanDangKhuonMat
                 int i = 0;
                 foreach (DataRow dr in dt.Rows)
                 {
-                    listView1.Items.Add(dr["ID"].ToString());
-                    listView1.Items[i].SubItems.Add(dr["height"].ToString());
-                    listView1.Items[i].SubItems.Add(dr["width"].ToString());
+                    //listView1.Items.Add(dr["ID"].ToString());
+                    //listView1.Items[i].SubItems.Add(dr["height"].ToString());
+                    //listView1.Items[i].SubItems.Add(dr["width"].ToString());
                     i++;
                 }
             }
@@ -70,7 +70,7 @@ namespace NhanDangKhuonMat
             //**Tải dữ liệu từ bảng eye của file XML vào ListView**//
             try
             {
-                listView2.Items.Clear();
+                //istView2.Items.Clear();
                 DataSet dataSet = new DataSet();
                 dataSet.ReadXml(path);
                 DataTable dt = new DataTable();
@@ -78,9 +78,9 @@ namespace NhanDangKhuonMat
                 int i = 0;
                 foreach (DataRow dr in dt.Rows)
                 {
-                    listView2.Items.Add(dr["ID"].ToString());
-                    listView2.Items[i].SubItems.Add(dr["height"].ToString());
-                    listView2.Items[i].SubItems.Add(dr["width"].ToString());
+                    //listView2.Items.Add(dr["ID"].ToString());
+                    //listView2.Items[i].SubItems.Add(dr["height"].ToString());
+                    //listView2.Items[i].SubItems.Add(dr["width"].ToString());
                     i++;
                 }
             }
@@ -199,7 +199,7 @@ namespace NhanDangKhuonMat
             }
                 
 
-            imageBox1 .Image = frame;
+            imageBox2 .Image = frame;
             
            
 
@@ -211,21 +211,22 @@ namespace NhanDangKhuonMat
         }
 
    
-        //Bắt đầu và tạm dừng sử dụng camera
-        private void btnStart_Click_1(object sender, EventArgs e)
+             
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (capture != null)
             {
                 if (captureInProgress)
                 {  //stop the capture
-                    btnStart.Image = NhanDangKhuonMat.Properties.Resources.play_button;
+                    toolStripMenuItem1.Image = NhanDangKhuonMat.Properties.Resources.play_button;
                     capture.Pause();
                 }
                 else
                 {
                     //start the capture
-                    btnStart.Image = NhanDangKhuonMat.Properties.Resources.pause_button;
-                    
+                    toolStripMenuItem1.Image = NhanDangKhuonMat.Properties.Resources.pause_button;
+                    toolStripMenuItem1.Text = "Pause";
                     capture.Start();
                 }
 
@@ -233,53 +234,31 @@ namespace NhanDangKhuonMat
             }
         }
 
-        //Lật camera từ trên xuống dưới
-        private void button2_Click_1(object sender, EventArgs e)
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
         {
             if (capture != null) capture.FlipVertical = !capture.FlipVertical;
         }
 
-        //Lật camera phải qua trái
-        private void button1_Click(object sender, EventArgs e)
+        private void horizonticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (capture != null) capture.FlipHorizontal = !capture.FlipHorizontal;
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listView2_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        //Hiển thị ListView
-        private void button3_Click(object sender, EventArgs e)
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
             loaddataface();
             loaddataeyes();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Xoa tung cai mot
             /*if (listView1.SelectedItems.Count == 0) return;   
             listView1.SelectedItems[0].Remove();*/
-            
+
             //Xoa tat ca
-            listView1.Items.Clear();
-            listView2.Items.Clear();
+           // listView1.Items.Clear();
+            //listView2.Items.Clear();
 
             //Xóa dữ liệu trong file XML
             XDocument testXML = XDocument.Load(path);
