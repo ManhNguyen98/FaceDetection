@@ -56,3 +56,4 @@ C:\Users\LaptopTCC\Source\Repos\FaceDetection3\NhanDangKhuonMat\obj\Debug\NhanDa
 C:\Users\LaptopTCC\Source\Repos\FaceDetection3\NhanDangKhuonMat\obj\Debug\NhanDangKhuonMat.csproj.CoreCompileInputs.cache
 C:\Users\LaptopTCC\Source\Repos\FaceDetection3\NhanDangKhuonMat\obj\Debug\NhanDangKhuonMat.exe
 C:\Users\LaptopTCC\Source\Repos\FaceDetection3\NhanDangKhuonMat\obj\Debug\NhanDangKhuonMat.pdb
+C:\Users\LaptopTCC\Source\Repos\FaceDetection3\NhanDangKhuonMat\obj\Debug\NhanDangKhuonMat.csproj.CopyComplete

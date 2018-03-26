@@ -33,6 +33,7 @@ namespace FaceDetection
                     face.ScaleFactor = 1.1;
                     face.MinNeighbors = 10;
                     face.MinObjectSize = Size.Empty;
+
                     eye.ScaleFactor = 1.1;
                     eye.MinNeighbors = 10;
                     eye.MinObjectSize = Size.Empty;

@@ -40,6 +40,7 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageBox2 = new Emgu.CV.UI.ImageBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +80,7 @@
             // 
             this.toolStripMenuItem4.Image = global::NhanDangKhuonMat.Properties.Resources.flipvertical_button;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(146, 22);
             this.toolStripMenuItem4.Text = "Vertical";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
@@ -87,7 +88,7 @@
             // 
             this.horizonticalToolStripMenuItem.Image = global::NhanDangKhuonMat.Properties.Resources.fliphorizontal_button;
             this.horizonticalToolStripMenuItem.Name = "horizonticalToolStripMenuItem";
-            this.horizonticalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.horizonticalToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.horizonticalToolStripMenuItem.Text = "Horizontical";
             this.horizonticalToolStripMenuItem.Click += new System.EventHandler(this.horizonticalToolStripMenuItem_Click);
             // 
@@ -104,7 +105,7 @@
             // 
             this.toolStripMenuItem6.Image = global::NhanDangKhuonMat.Properties.Resources.loadlistbutton;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(117, 22);
             this.toolStripMenuItem6.Text = "Load";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
@@ -112,7 +113,7 @@
             // 
             this.deleteToolStripMenuItem.Image = global::NhanDangKhuonMat.Properties.Resources.delete_button;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -132,8 +133,19 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(202, 21);
             this.dateTimePicker1.TabIndex = 3;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "13041381_674110096060379_5511142353412905758_o.jpg");
+            this.imageList1.Images.SetKeyName(1, "13041439_674109932727062_6666706475683312011_o.jpg");
+            this.imageList1.Images.SetKeyName(2, "13055778_674110282727027_4389815724031297667_o.jpg");
+            this.imageList1.Images.SetKeyName(3, "13055785_674111619393560_461573559027082450_o.jpg");
+            this.imageList1.Images.SetKeyName(4, "IMG_3318.JPG");
+            // 
             // Form1
             // 
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(960, 430);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.imageBox2);
@@ -172,6 +184,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private Emgu.CV.UI.ImageBox imageBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 

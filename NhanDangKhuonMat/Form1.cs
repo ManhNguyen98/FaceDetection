@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Generic;//Su dung List<>
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -21,8 +21,8 @@ namespace NhanDangKhuonMat
     public partial class Form1 : Form
     {
         //declaring global variables
-        private Capture capture = null;        //takes images from camera as image frames
-        private bool captureInProgress; // checks if capture is executing
+        private Capture capture = null;        //Lay anh tu may anh
+        private bool captureInProgress; // kiem tra neu may anh dang thuc thi
         public Form1()
         {
             InitializeComponent();
@@ -98,7 +98,7 @@ namespace NhanDangKhuonMat
             Mat frame = new Mat();
             capture.Retrieve(frame, 0);
 
-            Mat image = frame; //Read the files as an 8-bit Bgr image  
+            Mat image = frame; //Doc file theo kieu mau RBG 8-bit 
             long detectionTime;
             List<Rectangle> faces = new List<Rectangle>();
             List<Rectangle> eyes = new List<Rectangle>();
@@ -164,7 +164,7 @@ namespace NhanDangKhuonMat
 
             foreach (Rectangle eye in eyes)
             {
-                CvInvoke.Rectangle(image, eye, new Bgr(Color.Black).MCvScalar, 2);
+                CvInvoke.Rectangle(image, eye, new Bgr(Color.Black).MCvScalar, 5);
                 //**Xác định ID cho bảng eye**//
                 string day = DateTime.Now.Day.ToString();                            
                 string month = DateTime.Now.Month.ToString();                       
@@ -199,11 +199,12 @@ namespace NhanDangKhuonMat
             }
                 
 
-            imageBox2 .Image = frame;
+            imageBox2.Image = frame;//thiet lap hinh anh
             
            
 
         }
+        //giai phong du lieu
         private void ReleaseData()
         {
             if (capture != null)
@@ -218,13 +219,13 @@ namespace NhanDangKhuonMat
             if (capture != null)
             {
                 if (captureInProgress)
-                {  //stop the capture
+                {  //Dung may anh
                     toolStripMenuItem1.Image = NhanDangKhuonMat.Properties.Resources.play_button;
                     capture.Pause();
                 }
                 else
                 {
-                    //start the capture
+                    //bat dau may anh
                     toolStripMenuItem1.Image = NhanDangKhuonMat.Properties.Resources.pause_button;
                     toolStripMenuItem1.Text = "Pause";
                     capture.Start();
