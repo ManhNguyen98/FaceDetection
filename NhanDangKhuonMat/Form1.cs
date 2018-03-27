@@ -268,5 +268,21 @@ namespace NhanDangKhuonMat
 
             //********************************************//
         }
+       int i = 0;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int n = imageList1.Images.Count;
+            if (i > n-1) i = 0;
+            pictureBox1.Image = imageList1.Images[i];
+            i++;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn thoát?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
