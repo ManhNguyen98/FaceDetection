@@ -164,7 +164,7 @@ namespace NhanDangKhuonMat
 
             foreach (Rectangle eye in eyes)
             {
-                CvInvoke.Rectangle(image, eye, new Bgr(Color.Black).MCvScalar, 5);
+                CvInvoke.Rectangle(image, eye, new Bgr(Color.Black).MCvScalar, 3);
                 //**Xác định ID cho bảng eye**//
                 string day = DateTime.Now.Day.ToString();                            
                 string month = DateTime.Now.Month.ToString();                       
@@ -268,13 +268,18 @@ namespace NhanDangKhuonMat
 
             //********************************************//
         }
+        private void loadimage()
+        {
+            int n = imageList1.Images.Count;
+            if (i > n - 1) i = 0;
+            pictureBox1.Image = imageList1.Images[i];
+            i++;
+        }
+
        int i = 0;
         private void button1_Click(object sender, EventArgs e)
         {
-            int n = imageList1.Images.Count;
-            if (i > n-1) i = 0;
-            pictureBox1.Image = imageList1.Images[i];
-            i++;
+            loadimage();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
