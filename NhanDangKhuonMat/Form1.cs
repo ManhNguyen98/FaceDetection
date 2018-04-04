@@ -196,6 +196,7 @@ namespace NhanDangKhuonMat
                     MessageBox.Show(err.Message);
                 }
                 //*********************************************//
+               // if (eye.Left != 0) SendKeys.Send("{PGUP}");
             }
                 
 
@@ -268,19 +269,22 @@ namespace NhanDangKhuonMat
 
             //********************************************//
         }
-        private void loadimage()
+        private void loadimageUp()
         {
             int n = imageList1.Images.Count;
             if (i > n - 1) i = 0;
             pictureBox1.Image = imageList1.Images[i];
             i++;
         }
+        private void loadimageDown()
+        {
+            int n = imageList1.Images.Count;
+            if (i == 0) i = n-1;
+            pictureBox1.Image = imageList1.Images[i];
+            i--;
+        }
 
        int i = 0;
-        private void button1_Click(object sender, EventArgs e)
-        {
-            loadimage();
-        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -288,6 +292,24 @@ namespace NhanDangKhuonMat
             {
                 Application.Exit();
             }
+        }
+
+        //Bắt sự kiện PageUp, PageDown
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            
+            if (keyData == Keys.PageUp)
+            {
+                loadimageUp();
+                return true;
+            }
+           
+            if (keyData == Keys.PageDown)
+            {
+                loadimageDown();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
