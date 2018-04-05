@@ -85,3 +85,6 @@ C:\Users\LaptopTCC\source\repos\FaceDetection\NhanDangKhuonMat\obj\Debug\NhanDan
 C:\Users\LaptopTCC\source\repos\FaceDetection\NhanDangKhuonMat\obj\Debug\NhanDangKhuonMat.csproj.CopyComplete
 C:\Users\LaptopTCC\source\repos\FaceDetection\NhanDangKhuonMat\obj\Debug\NhanDangKhuonMat.exe
 C:\Users\LaptopTCC\source\repos\FaceDetection\NhanDangKhuonMat\obj\Debug\NhanDangKhuonMat.pdb
+C:\Users\LaptopTCC\source\repos\FaceDetection\NhanDangKhuonMat\bin\Debug\haarcascade_frontalface_alt_tree.xml
+C:\Users\LaptopTCC\source\repos\FaceDetection\NhanDangKhuonMat\bin\Debug\haarcascade_lefteye_2splits.xml
+C:\Users\LaptopTCC\source\repos\FaceDetection\NhanDangKhuonMat\bin\Debug\haarcascade_righteye_2splits.xml

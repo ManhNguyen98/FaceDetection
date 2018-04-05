@@ -17,8 +17,8 @@ namespace FaceDetection
     public static class DetectFace
     {
         public static void Detect(
-          Mat image, String faceFileName, String eyeFileName,
-          List<Rectangle> faces, List<Rectangle> eyes,
+          Mat image, String faceFileName, String eyeleftFileName, string eyerightFileName,
+          List<Rectangle> faces, List<Rectangle> eyesleft,List<Rectangle> eyesright,
           bool tryUseCuda, bool tryUseOpenCL,
           out long detectionTime)
         {
@@ -28,15 +28,20 @@ namespace FaceDetection
             if (tryUseCuda && CudaInvoke.HasCuda)
             {
                 using (CudaCascadeClassifier face = new CudaCascadeClassifier(faceFileName))
-                using (CudaCascadeClassifier eye = new CudaCascadeClassifier(eyeFileName))
+                using (CudaCascadeClassifier eyeleft = new CudaCascadeClassifier(eyeleftFileName))
+                using (CudaCascadeClassifier eyeright = new CudaCascadeClassifier(eyerightFileName))
                 {
                     face.ScaleFactor = 1.1;
                     face.MinNeighbors = 10;
                     face.MinObjectSize = Size.Empty;
 
-                    eye.ScaleFactor = 1.1;
-                    eye.MinNeighbors = 10;
-                    eye.MinObjectSize = Size.Empty;
+                    eyeleft.ScaleFactor = 1.1;
+                    eyeleft.MinNeighbors = 10;
+                    eyeleft.MinObjectSize = Size.Empty;
+
+                    eyeright.ScaleFactor = 1.1;
+                    eyeright.MinNeighbors = 10;
+                    eyeright.MinObjectSize = Size.Empty;
                     watch = Stopwatch.StartNew();
                     using (CudaImage<Bgr, Byte> gpuImage = new CudaImage<Bgr, byte>(image))
                     using (CudaImage<Gray, Byte> gpuGray = gpuImage.Convert<Gray, Byte>())
@@ -54,15 +59,30 @@ namespace FaceDetection
                                 using (CudaImage<Gray, Byte> clone = faceImg.Clone(null))
                                 using (GpuMat eyeRegionMat = new GpuMat())
                                 {
-                                    eye.DetectMultiScale(clone, eyeRegionMat);
-                                    Rectangle[] eyeRegion = eye.Convert(eyeRegionMat);
-                                    foreach (Rectangle e in eyeRegion)
+                                    eyeleft.DetectMultiScale(clone, eyeRegionMat);
+                                    Rectangle[] eyeRegion = eyeleft.Convert(eyeRegionMat);
+                                    foreach (Rectangle eleft in eyeRegion)
                                     {
-                                        Rectangle eyeRect = e;
-                                        eyeRect.Offset(f.X, f.Y);
-                                        eyes.Add(eyeRect);
-                                       
+                                        Rectangle eyeRectleft = eleft;
+                                        eyeRectleft.Offset(f.X, f.Y);
+                                        eyesleft.Add(eyeRectleft);
+
                                     }
+
+                                }
+                                using (CudaImage<Gray, Byte> clone = faceImg.Clone(null))
+                                using (GpuMat eyeRegionMat = new GpuMat())
+                                {
+                                    eyeright.DetectMultiScale(clone, eyeRegionMat);
+                                    Rectangle[] eyeRegion = eyeright.Convert(eyeRegionMat);
+                                    foreach (Rectangle eright in eyeRegion)
+                                    {
+                                        Rectangle eyeRectright = eright;
+                                        eyeRectright.Offset(f.X, f.Y);
+                                        eyesright.Add(eyeRectright);
+
+                                    }
+
                                 }
                             }
                         }
@@ -81,7 +101,8 @@ namespace FaceDetection
 
                 //Read the HaarCascade objects
                 using (CascadeClassifier face = new CascadeClassifier(faceFileName))
-                using (CascadeClassifier eye = new CascadeClassifier(eyeFileName))
+                using (CascadeClassifier eyeleft = new CascadeClassifier(eyeleftFileName))
+                using (CascadeClassifier eyeright = new CascadeClassifier(eyerightFileName))
                 {
                     watch = Stopwatch.StartNew();
                     using (UMat ugray = new UMat())
@@ -107,17 +128,28 @@ namespace FaceDetection
                             //Get the region of interest on the faces
                             using (UMat faceRegion = new UMat(ugray, f))
                             {
-                                Rectangle[] eyesDetected = eye.DetectMultiScale(
+                                Rectangle[] eyesleftDetected = eyeleft.DetectMultiScale(
                                    faceRegion,
                                    1.1,
                                    10,
                                    new Size(20, 20));
 
-                                foreach (Rectangle e in eyesDetected)
+                                foreach (Rectangle eleft in eyesleftDetected)
                                 {
-                                    Rectangle eyeRect = e;
-                                    eyeRect.Offset(f.X, f.Y);
-                                    eyes.Add(eyeRect);
+                                    Rectangle eyeRectleft = eleft;
+                                    eyeRectleft.Offset(f.X, f.Y);
+                                    eyesleft.Add(eyeRectleft);
+                                }
+                                Rectangle[] eyesrightDetected = eyeright.DetectMultiScale(
+                                  faceRegion,
+                                  1.1,
+                                  10,
+                                  new Size(20, 20));
+                                foreach (Rectangle eright in eyesrightDetected)
+                                {
+                                    Rectangle eyeRectright = eright;
+                                    eyeRectright.Offset(f.X, f.Y);
+                                    eyesright.Add(eyeRectright);
                                 }
                             }
                         }
