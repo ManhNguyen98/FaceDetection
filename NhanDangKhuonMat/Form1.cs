@@ -83,13 +83,14 @@ namespace NhanDangKhuonMat
             foreach (Rectangle eyeleft in eyesleft)
             {
                 CvInvoke.Rectangle(image, eyeleft, new Bgr(Color.Black).MCvScalar, 3);
-                
+                if (eyeleft.X != 0 ) SendKeys.SendWait("{PGUP}");
        
             }
 
             foreach (Rectangle eyeright in eyesright)
             {
                 CvInvoke.Rectangle(image, eyeright, new Bgr(Color.Black).MCvScalar, 3);
+                if (eyeright.X != 0) SendKeys.SendWait("{PGDN}");
             }
                 
 

@@ -148,14 +148,16 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "IMG_3579.JPG");
-            this.imageList1.Images.SetKeyName(1, "IMG_3580.JPG");
-            this.imageList1.Images.SetKeyName(2, "IMG20171021125434.jpg");
-            this.imageList1.Images.SetKeyName(3, "IMG20171021134402.jpg");
-            this.imageList1.Images.SetKeyName(4, "IMG20171021134532.jpg");
-            this.imageList1.Images.SetKeyName(5, "IMG20171021135315.jpg");
-            this.imageList1.Images.SetKeyName(6, "IMG20171021151511.jpg");
-            this.imageList1.Images.SetKeyName(7, "IMG20171021153616.jpg");
+            this.imageList1.Images.SetKeyName(0, "IMG_3551.JPG");
+            this.imageList1.Images.SetKeyName(1, "IMG_3552.JPG");
+            this.imageList1.Images.SetKeyName(2, "IMG_3562.JPG");
+            this.imageList1.Images.SetKeyName(3, "IMG_3563.JPG");
+            this.imageList1.Images.SetKeyName(4, "IMG_3567.JPG");
+            this.imageList1.Images.SetKeyName(5, "IMG_3571.JPG");
+            this.imageList1.Images.SetKeyName(6, "IMG_3572.JPG");
+            this.imageList1.Images.SetKeyName(7, "IMG_3575.JPG");
+            this.imageList1.Images.SetKeyName(8, "IMG_3576.JPG");
+            this.imageList1.Images.SetKeyName(9, "IMG_3578.JPG");
             // 
             // pictureBox1
             // 

@@ -109,12 +109,12 @@ namespace FaceDetection
                     {
                         CvInvoke.CvtColor(image, ugray, Emgu.CV.CvEnum.ColorConversion.Bgr2Gray);
 
-                        //normalizes brightness and increases contrast of the image
+                        //Cân bằng sáng của ảnh
                         CvInvoke.EqualizeHist(ugray, ugray);
 
-                        //Detect the faces  from the gray scale image and store the locations as rectangle
-                        //The first dimensional is the channel
-                        //The second dimension is the index of the rectangle in the specific channel
+                        //Phát hiện các khuôn mặt từ hình ảnh màu xám và lưu các vị trí làm hình chữ nhật
+                        // Chiều thứ nhất là kênh
+                        // Kích thước thứ hai là chỉ mục của hình chữ nhật trong kênh cụ thể
                         Rectangle[] facesDetected = face.DetectMultiScale(
                            ugray,
                            1.1,
@@ -125,21 +125,22 @@ namespace FaceDetection
 
                         foreach (Rectangle f in facesDetected)
                         {
-                            //Get the region of interest on the faces
+                            //Sử dụng khu vực của khuôn mặt
                             using (UMat faceRegion = new UMat(ugray, f))
                             {
+                                //tìm hình chữ nhật của mắt phải
                                 Rectangle[] eyesleftDetected = eyeleft.DetectMultiScale(
                                    faceRegion,
                                    1.1,
                                    10,
                                    new Size(20, 20));
-
                                 foreach (Rectangle eleft in eyesleftDetected)
                                 {
                                     Rectangle eyeRectleft = eleft;
                                     eyeRectleft.Offset(f.X, f.Y);
                                     eyesleft.Add(eyeRectleft);
                                 }
+                                //tìm hình chữ nhật của mắt phải
                                 Rectangle[] eyesrightDetected = eyeright.DetectMultiScale(
                                   faceRegion,
                                   1.1,
@@ -157,7 +158,7 @@ namespace FaceDetection
                     watch.Stop();
                 }
             }
-            detectionTime = watch.ElapsedMilliseconds;
+            detectionTime = watch.ElapsedMilliseconds;//đo tổng thời gian trôi qua
         }
     }
 }
