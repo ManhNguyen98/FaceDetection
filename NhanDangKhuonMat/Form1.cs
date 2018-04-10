@@ -36,6 +36,7 @@ namespace NhanDangKhuonMat
             {
                 MessageBox.Show(excpt.Message);
             }
+            label1.Text = "" + imageList1.Images.Count;
         }
      
 
@@ -139,17 +140,28 @@ namespace NhanDangKhuonMat
         {
             if (capture != null) capture.FlipHorizontal = !capture.FlipHorizontal;
         }
+        //load ảnh vào ImageList
 
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
-            
+            openFileDialog1.Multiselect = true;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                
+                foreach (String i in openFileDialog1.FileNames)
+                {
+                    imageList1.Images.Add(Image.FromFile(i));
+                }
+                label1.Text = "" + imageList1.Images.Count;
+            }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            pictureBox1.Image = nothing;
+            imageList1.Images.Clear();
         }
-
+        public Image nothing { get; set; }
         private void loadimageUp()
         {
             int n = imageList1.Images.Count;
