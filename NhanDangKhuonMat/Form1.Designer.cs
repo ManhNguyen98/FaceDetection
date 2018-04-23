@@ -43,6 +43,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -148,28 +150,45 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "IMG_3579.JPG");
-            this.imageList1.Images.SetKeyName(1, "IMG_3580.JPG");
-            this.imageList1.Images.SetKeyName(2, "IMG20171021125434.jpg");
-            this.imageList1.Images.SetKeyName(3, "IMG20171021134402.jpg");
-            this.imageList1.Images.SetKeyName(4, "IMG20171021134532.jpg");
-            this.imageList1.Images.SetKeyName(5, "IMG20171021135315.jpg");
-            this.imageList1.Images.SetKeyName(6, "IMG20171021151511.jpg");
-            this.imageList1.Images.SetKeyName(7, "IMG20171021153616.jpg");
+            this.imageList1.Images.SetKeyName(0, "IMG_3551.JPG");
+            this.imageList1.Images.SetKeyName(1, "IMG_3552.JPG");
+            this.imageList1.Images.SetKeyName(2, "IMG_3562.JPG");
+            this.imageList1.Images.SetKeyName(3, "IMG_3563.JPG");
+            this.imageList1.Images.SetKeyName(4, "IMG_3567.JPG");
+            this.imageList1.Images.SetKeyName(5, "IMG_3571.JPG");
+            this.imageList1.Images.SetKeyName(6, "IMG_3572.JPG");
+            this.imageList1.Images.SetKeyName(7, "IMG_3575.JPG");
+            this.imageList1.Images.SetKeyName(8, "IMG_3576.JPG");
+            this.imageList1.Images.SetKeyName(9, "IMG_3578.JPG");
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(706, 96);
+            this.pictureBox1.Location = new System.Drawing.Point(701, 37);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(217, 177);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(799, 220);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label1";
             // 
             // Form1
             // 
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(960, 430);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.imageBox2);
@@ -212,6 +231,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
