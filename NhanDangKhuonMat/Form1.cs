@@ -67,7 +67,7 @@ namespace NhanDangKhuonMat
               tryUseOpenCL,
               out detectionTime);
 
-            
+
 
             foreach (Rectangle face in faces)
             {
@@ -76,25 +76,21 @@ namespace NhanDangKhuonMat
                 Bitmap bmp = new Bitmap(face.Size.Width, face.Size.Height);
                 Graphics g = Graphics.FromImage(bmp);
                 g.DrawImage(c, 0, 0, face, GraphicsUnit.Pixel);
-
-                
-            }
-            
-
-            foreach (Rectangle eyeleft in eyesleft)
-            {
-                CvInvoke.Rectangle(image, eyeleft, new Bgr(Color.Black).MCvScalar, 3);
-                if (eyeleft.X != 0 ) SendKeys.SendWait("{PGUP}");
-       
-            }
-
-            foreach (Rectangle eyeright in eyesright)
-            {
-                CvInvoke.Rectangle(image, eyeright, new Bgr(Color.Black).MCvScalar, 3);
-                if (eyeright.X != 0) SendKeys.SendWait("{PGDN}");
-            }
                 
 
+                    foreach (Rectangle eyeleft in eyesleft)
+                {
+                    CvInvoke.Rectangle(image, eyeleft, new Bgr(Color.Black).MCvScalar, 3);
+                    if (eyeleft.X != 0) SendKeys.SendWait("{PGUP}");
+
+                }
+
+                foreach (Rectangle eyeright in eyesright)
+                {
+                    CvInvoke.Rectangle(image, eyeright, new Bgr(Color.Blue).MCvScalar, 3);
+                    if (eyeright.X != 0) SendKeys.SendWait("{PGDN}");
+                }
+            }
             imageBox2.Image = frame;//thiet lap hinh anh
             
            
@@ -117,6 +113,7 @@ namespace NhanDangKhuonMat
                 if (captureInProgress)
                 {  //Dung may anh
                     toolStripMenuItem1.Image = NhanDangKhuonMat.Properties.Resources.play_button;
+                    toolStripMenuItem1.Text = "Play";
                     capture.Pause();
                 }
                 else
@@ -167,6 +164,7 @@ namespace NhanDangKhuonMat
             int n = imageList1.Images.Count;
             if (i > n - 1) i = 0;
             pictureBox1.Image = imageList1.Images[i];
+
             i++;
         }
         private void loadimageDown()
@@ -178,7 +176,7 @@ namespace NhanDangKhuonMat
         }
 
        int i = 0;
-
+    
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn thoát?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
